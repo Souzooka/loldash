@@ -18,7 +18,11 @@ var forEach = function (collection, iteratee) {
 // Iterate has three parameters: value, key, collection
 // Map is almost like forEach except it returns an array of values.
 var map = function (collection, iteratee) {
-  // your code here
+  var returnedArray = [];
+  for (var i in collection) {
+  	returnedArray.push(iteratee(collection[i], i, collection));
+  }
+  return returnedArray;
 }
 // example execution: map([1,2,3], function(v, k, c) {return v *2 })
 // would return the following:
