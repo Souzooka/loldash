@@ -23,7 +23,7 @@ var map = function (collection, iteratee) {
   	returnedArray.push(iteratee(collection[i], i, collection));
   }
   return returnedArray;
-}
+};
 // example execution: map([1,2,3], function(v, k, c) {return v *2 })
 // would return the following:
 // [2,4,6]
@@ -33,8 +33,14 @@ var map = function (collection, iteratee) {
 // A predicate is a function that returns true or false.
 // The predicate takes in three parameters: value, index, collection
 var filter = function(collection, predicate) {
-  // your code here
-}
+  var returnedArray = [];
+  for (var i in collection) {
+  	if (predicate(collection[i])) {
+  		returnedArray.push(collection[i]);
+  	}
+  }
+  return returnedArray;
+};
 // example execution: filter([1,2,3,4], function(v,k,c) {return v % 2 === 0})
 // would return the following:
 // [2,4]
@@ -44,4 +50,4 @@ module.exports = {
   forEach: forEach,
   map: map,
   filter: filter
-}
+};
