@@ -3,7 +3,9 @@
 // be an array or object.  Call iterator for each element of the collection. 
 // The iteratee function takes in three parameters: value, key, collection
 var forEach = function (collection, iteratee) {
-  // your code here
+	for (var i in collection) {
+		iteratee(collection[i], i, collection);
+	}
 };
 // example execution: forEach([1,2,3], function(v, k, c) { console.log(v) })
 // would output the following:
